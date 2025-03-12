@@ -1,0 +1,170 @@
+<h1 id="вводная-часть">Вводная часть</h1>
+<h2 id="цели-и-задачи">Цели и задачи</h2>
+<p><strong>Цель</strong></p>
+<p>Исследование модели хищник-жертва с помощью xcos и OpenModelica.</p>
+<p><strong>Задачи</strong></p>
+<ul>
+<li>Реализовать классическую систему хищник–жертва
+<ul>
+<li>в xcos</li>
+<li>в xcos с помощью блока Modelica</li>
+<li>в OpenModelica</li>
+</ul></li>
+</ul>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<h2 id="теоретическое-введение">Теоретическое введение</h2>
+<p><span class="math display">$$\begin{cases}
+  &amp;\dfrac{dx}{dt} = ax(t)-bx(t)y(t)\\
+ &amp;\dfrac{dy}{dt} = cx(t)y(t)-dy(t)
+\end{cases}$$</span></p>
+<p>В этой модели <span class="math inline"><em>x</em></span> – число
+жертв, <span class="math inline"><em>y</em></span> - число хищников.
+Коэффициент <span class="math inline"><em>a</em></span> описывает
+скорость естественного прироста числа жертв в отсутствие хищников, <span
+class="math inline"><em>d</em></span> - естественное вымирание хищников,
+лишенных пищи в виде жертв. Каждый акт взаимодействия уменьшает
+популяцию жертв, но способствует увеличению популяции хищников (члены
+<span class="math inline"> − <em>b</em><em>x</em><em>y</em></span> и
+<span class="math inline"><em>c</em><em>x</em><em>y</em></span> в правой
+части уравнения).</p>
+<h2 id="реализация-модели-в-xcos">Реализация модели в xcos</h2>
+<figure id="fig:001">
+<img src="image/1.png" style="width:50.0%"
+alt="Задать переменные окружения в xcos" />
+<figcaption aria-hidden="true">Задать переменные окружения в
+xcos</figcaption>
+</figure>
+<h2 id="реализация-модели-в-xcos-1">Реализация модели в xcos</h2>
+<figure id="fig:002">
+<img src="image/2.png" style="width:60.0%"
+alt="Модель хищник-жертва в xcos" />
+<figcaption aria-hidden="true">Модель хищник-жертва в xcos</figcaption>
+</figure>
+<h2 id="реализация-модели-в-xcos-2">Реализация модели в xcos</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<figure id="fig:003">
+<img src="image/3.png" style="width:70.0%"
+alt="Задать начальное значение в блоке интегрирования для x" />
+<figcaption aria-hidden="true">Задать начальное значение в блоке
+интегрирования для x</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure id="fig:004">
+<img src="image/4.png" style="width:70.0%"
+alt="Задать начальное значение в блоке интегрирования для y" />
+<figcaption aria-hidden="true">Задать начальное значение в блоке
+интегрирования для y</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="реализация-модели-в-xcos-3">Реализация модели в xcos</h2>
+<figure id="fig:005">
+<img src="image/5.png" style="width:70.0%"
+alt="Задать конечное время интегрирования в xcos" />
+<figcaption aria-hidden="true">Задать конечное время интегрирования в
+xcos</figcaption>
+</figure>
+<h2 id="реализация-модели-в-xcos-4">Реализация модели в xcos</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<figure id="fig:006">
+<img src="image/6.png" style="width:70.0%"
+alt="Решение модели хищник жертва при a = 2, b = 1, c = 0.3, d = 1, x(0) = 2, y(9) = 1" />
+<figcaption aria-hidden="true">Решение модели хищник жертва при <span
+class="math inline"><em>a</em> = 2</span>, <span
+class="math inline"><em>b</em> = 1</span>, <span
+class="math inline"><em>c</em> = 0.3</span>, <span
+class="math inline"><em>d</em> = 1</span>, <span
+class="math inline"><em>x</em>(0) = 2</span>, <span
+class="math inline"><em>y</em>(9) = 1</span></figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure id="fig:007">
+<img src="image/7.png" style="width:70.0%"
+alt="Фазовый портрет модели хищник жертва при a = 2, b = 1, c = 0.3, d = 1, x(0) = 2, y(9) = 1" />
+<figcaption aria-hidden="true">Фазовый портрет модели хищник жертва при
+<span class="math inline"><em>a</em> = 2</span>, <span
+class="math inline"><em>b</em> = 1</span>, <span
+class="math inline"><em>c</em> = 0.3</span>, <span
+class="math inline"><em>d</em> = 1</span>, <span
+class="math inline"><em>x</em>(0) = 2</span>, <span
+class="math inline"><em>y</em>(9) = 1</span></figcaption>
+</figure>
+</div>
+</div>
+<h2 id="реализация-модели-с-помощью-блока-modelica-в-xcos">Реализация
+модели с помощью блока Modelica в xcos</h2>
+<figure id="fig:008">
+<img src="image/8.png" style="width:60.0%"
+alt="Модель хищник-жертва в xcos с применением блока Modelica" />
+<figcaption aria-hidden="true">Модель хищник-жертва в xcos с применением
+блока Modelica</figcaption>
+</figure>
+<h2 id="реализация-модели-с-помощью-блока-modelica-в-xcos-1">Реализация
+модели с помощью блока Modelica в xcos</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<figure id="fig:009">
+<img src="image/9.png" style="width:70.0%"
+alt="Ввод значений входных параметров блока Modelica для модели" />
+<figcaption aria-hidden="true">Ввод значений входных параметров блока
+Modelica для модели</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure id="fig:010">
+<img src="image/10.png" style="width:70.0%"
+alt="Ввод функции блока Modelica для модели" />
+<figcaption aria-hidden="true">Ввод функции блока Modelica для
+модели</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="реализация-модели-в-openmodelica">Реализация модели в
+OpenModelica</h2>
+<figure id="fig:011">
+<img src="image/11.png" style="width:70.0%"
+alt="Модель в OpenModelica" />
+<figcaption aria-hidden="true">Модель в OpenModelica</figcaption>
+</figure>
+<h2 id="реализация-модели-в-openmodelica-1">Реализация модели в
+OpenModelica</h2>
+<figure id="fig:012">
+<img src="image/12.png" style="width:65.0%"
+alt="Параметры моделирования в OpenModelica" />
+<figcaption aria-hidden="true">Параметры моделирования в
+OpenModelica</figcaption>
+</figure>
+<h2 id="реализация-модели-в-openmodelica-2">Реализация модели в
+OpenModelica</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:50%;">
+<figure id="fig:013">
+<img src="image/13.png" style="width:70.0%"
+alt="Решение модели хищник жертва при a = 2, b = 1, c = 0.3, d = 1, x(0) = 2, y(9) = 1. OpenModelica" />
+<figcaption aria-hidden="true">Решение модели хищник жертва при <span
+class="math inline"><em>a</em> = 2</span>, <span
+class="math inline"><em>b</em> = 1</span>, <span
+class="math inline"><em>c</em> = 0.3</span>, <span
+class="math inline"><em>d</em> = 1</span>, <span
+class="math inline"><em>x</em>(0) = 2</span>, <span
+class="math inline"><em>y</em>(9) = 1</span>. OpenModelica</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure id="fig:014">
+<img src="image/14.png" style="width:70.0%"
+alt="Фазовый портрет модели хищник жертва при a = 2, b = 1, c = 0.3, d = 1, x(0) = 2, $y(9) = 1. OpenModelica" />
+<figcaption aria-hidden="true">Фазовый портрет модели хищник жертва при
+<span class="math inline"><em>a</em> = 2</span>, <span
+class="math inline"><em>b</em> = 1</span>, <span
+class="math inline"><em>c</em> = 0.3</span>, <span
+class="math inline"><em>d</em> = 1</span>, <span
+class="math inline"><em>x</em>(0) = 2</span>, $y(9) = 1.
+OpenModelica</figcaption>
+</figure>
+</div>
+</div>
+<h1 id="заключение">Заключение</h1>
+<p>В результате выполнения работы была исследована модель хищник-жертва
+при помощи xcos и OpenModelica.</p>
