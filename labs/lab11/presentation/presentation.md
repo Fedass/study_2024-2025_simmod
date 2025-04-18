@@ -4,10 +4,10 @@ lang: ru-RU
 title: Лабораторная работа №11
 subtitle: Модель системы массового обслуживания $M|M|1$
 author:
-  - Беличева Д. М.
+  - Городянский Ф.Н.
 institute:
   - Российский университет дружбы народов, Москва, Россия
-
+  
 ## i18n babel
 babel-lang: russian
 babel-otherlangs: english
@@ -20,11 +20,12 @@ aspectratio: 169
 section-titles: true
 theme: metropolis
 header-includes:
- - \metroset{progressbar=frametitle,sectionpage=progressbar,numbering=fraction}
- - '\makeatletter'
- - '\beamer@ignorenonframefalse'
- - '\makeatother'
+  - \usepackage{fontspec}
+  - \setmainfont{FreeSerif}
+  - \setsansfont{FreeSans}
+  - \setmonofont{FreeMono}
 ---
+
 
 # Информация
 
@@ -33,16 +34,14 @@ header-includes:
 :::::::::::::: {.columns align=center}
 ::: {.column width="60%"}
 
-  * Беличева Дарья Михайловна
-  * студентка
+  * Городянский Фёдор Николаевич
+  * студент
   * Российский университет дружбы народов
-  * [1032216453@pfur.ru](mailto:1032216453@pfur.ru)
-  * <https://dmbelicheva.github.io/ru/>
+  * [1132226456@pfur.ru](mailto:1132226456@pfur.ru)
+  * <https://Fedass.github.io/ru/>
 
 :::
 ::: {.column width="25%"}
-
-![](./image/belicheva.jpg)
 
 :::
 ::::::::::::::
@@ -137,4 +136,4 @@ FIFO. Если сервер находится в режиме ожидания 
 
 ## Выводы
 
-В процессе выполнения данной лабораторной работы я реализовала модель системы массового обслуживания $M|M|1$ в CPN Tools.
+В процессе выполнения данной лабораторной работы я реализовал модель системы массового обслуживания $M|M|1$ в CPN Tools.
